@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Reveal - 4th Sem ISE</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&family=Fredoka+One&display=swap');
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63);
+            text-align: center;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 20px;
+            padding-bottom: 320px; 
+        }
+        h1 {
+            font-size: 50px;
+            font-weight: bold;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h2 {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: slideIn 1.2s ease-in-out;
+        }
+        .reveal-box {
+            font-size: 22px;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            width: 70%;
+            max-width: 600px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            margin: 15px 0 40px 0;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+        .reveal-box.show {
+            display: block;
+            opacity: 1;
+            transform: scale(1.05);
+            animation: popIn 0.8s ease-in-out;
+        }
+        button {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: white;
+            padding: 15px 30px;
+            font-size: 22px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease-in-out, background 0.3s;
+        }
+        button:hover {
+            transform: scale(1.15);
+            background: linear-gradient(135deg, #ff8e53, #ff6b6b);
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes slideIn {
+            0% { transform: translateY(-30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0"></script>
+    <h1>📢 A CALL TO ALL THE 4TH SEM ISE STUDENTS OF NMIT! 📢</h1>
+    <h2>WANT SOME REFRESHMENTS? YOU HAVE A SMALL SURPRISE FROM YOUR CRs!</h2>
+    <button class="btn" onclick="showStep(1)">Curious? Click Here! 👀</button>
+    
+    <div id="step1" class="reveal-box">GUESS WHATTT... WE HAVE SOME EXCITING NEWS!!! 🎉<br>
+    <button class="btn" onclick="showStep(2)">TELL MEEE NOW!! 🚀</button>
+    </div>
+    
+    <div id="step2" class="reveal-box">Assignments, lectures & submissions of Nitte got you down? 
+    <br>How about a little ADVENTURE? 🏝✨
+    <button class="btn" onclick="showStep(3)">Go on... 👀</button>
+    </div>
+    
+    <div id="step3" class="reveal-box">It's time to pack your bags! 🎒🔥
+    <br>We’re going on a TRIP! 🚌🌊
+    <br>Guess where??
+    <br>
+    <button class="btn" onclick="showStep(4)">Reveal the place!! 🚀</button>
+    </div>
+    
+    <div id="step4" class="reveal-box">🌴🌊 THE WAIT IS OVER!!!
+    <br>🎉 WE’RE GOING TO...
+    <br>
+    <button class="btn" onclick="showStep(5)">THE FINAL REVEAL!! 🌟</button>
+    </div>
+    
+    <div id="step5" class="reveal-box">
+        🎉🥳🎒🏝 🚍 <b>WE'RE GOING TO <span style="color:#ffeb3b;">KARWAR KAIGA!!!</span> 🌊🔥</b>
+        <br>On April 17th, 2025, after MSE 1, and returning on the afternoon of April 20th. Pack your bags! 💼✨<br>
+        <button class="btn" onclick="showStep(6)">Disappointed? 🤔</button>
+    </div>
+
+    <div id="step6" class="reveal-box">
+        Oh, it's just a field trip? 😐
+        <br>But wait... THE 1ST DAY IS A FIELD TRIP...
+        <br>THE 2ND DAY IS OURS TO EXPLORE THE WESTERN GHATS & BEACHES! 🌄🌊
+        <br>Excited now?
+        <button class="btn" onclick="triggerConfetti()">LESSGOOO!!! 🚀</button>
+    </div>
+    
+    <script>
+        function showStep(step) {
+            document.getElementById("step" + step).classList.add("show");
+        }
+        function triggerConfetti() {
+            confetti({ particleCount: 300, spread: 120, origin: { y: 0.6 } });
+        }
+    </script>
+</body>
+</html>
